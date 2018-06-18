@@ -1,0 +1,30 @@
+<p>
+ <strong><u>Name:</u></strong>
+ <%= @user.name %>
+</p>
+
+<p>
+ <strong><u>Address:</u></strong>
+ <%= @user.address %>
+</p>
+
+<p>
+ <strong><u>Phone Number:</u></strong>
+ <%= @user.phone_number %>
+</p>
+
+<p>
+ <strong><u>Date of Birth:</u></strong>
+ <%= @user.date_of_birth %>
+</p>
+
+
+<h2>Extras</h2>
+<%= render @user.extras %>
+
+<h2>Add a extra:</h2>
+<%= render 'extras/form' %>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

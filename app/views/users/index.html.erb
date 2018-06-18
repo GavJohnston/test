@@ -1,0 +1,49 @@
+
+
+
+
+<h1>Listing users</h1>
+
+
+<%= form_tag users_path, :method => 'get' do %>
+<%= text_field_tag :search, params[:search] %>
+
+<button type="Search" class="btn btn-primary">Search</button>
+
+<% end %>
+<%= link_to 'New user', new_user_path %>
+<table>
+ <tr>
+ <th><u>Name</u></th>
+ <th><u>Address</u></th>
+ <th><u>Phone Number</u></th>
+ <th><u>Date of Birth</u></th>
+
+   
+ </tr>
+
+
+ <% @users.each do |user| %>
+ <tr>
+ <td><%= user.name %></td>
+ <td><%= user.address %></td>
+ <td><%= user.phone_number %></td>
+ <td><%= user.date_of_birth %></td>
+ <td><strong><%= user.created_at %></strong></td>
+ 
+ 
+ <td><%= link_to 'Show', user_path(user) %></td>
+ <td><%= link_to 'Edit', edit_user_path(user) %></td>
+ <td><%= link_to 'Destroy', user_path(user),
+ method: :delete,
+ data: { confirm: 'Are you sure?' } %></td>
+ </tr>
+ <td><hr></td>
+ <td><hr></td>
+ <td><hr></td>
+ <td><hr></td>
+ <td><hr></td>
+ <td><hr></td>
+ <td><hr></td>
+ <% end %>
+</table> 

@@ -1,0 +1,13 @@
+<% if doctor_signed_in? %>
+ <li>
+ <a class="btn btn-info" href="doctors/edit" role="button">edit registration</a>
+
+ </li>
+<% else %>
+ <li>
+
+  
+  
+ <button class="btn btn-info"><%= link_to('Edit registration', edit_doctor_registration_path) %></button>
+ </li>
+<% end %>
